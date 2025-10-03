@@ -16,7 +16,7 @@
         <label for="tema" style="color:#BDC3C7; margin-right:8px;">ESCOLHA O TEMA:</label>
         <select id="tema">
           <option value="JOGOS">JOGOS</option>
-          <option value="RESUMO DE FILMES">RESUMO DE FILMES</option>
+          <option value="RESUMO_DE_FILMES">RESUMO DE FILMES</option>
           <option value="MUSICA">MUSICA</option>
           <option value="TUTORIAL">TUTORIAL</option>
         </select>
@@ -45,15 +45,15 @@
           class="video-frame"
           width="540"
           height="310"
-          src="https://www.youtube.com/embed/ATyO90ujnEU?si=SzZo3_eud0U-CwfV" 
+          src="" 
           title="Player de vídeo"
           frameborder="0"
           allowfullscreen
         ></iframe>
 
         <div class="info">
-                    <h3>ARMÊNIA 0 X 5 PORTUGAL | MELHORES MOMENTOS | ELIMINATÓRIAS DA COPA DO MUNDO 2026 | sportv</h3>
-          <p></p>
+          <h3></h3>
+          <p></p> 
         </div>
       </div>
     </main>
@@ -76,7 +76,7 @@
          url: "https://youtu.be/aTbHZhd4FHo?si=KsDkZIi2IXqBCZYT" 
         },
       ],
-      RESUMO DE FILMES: [
+      RESUMO_DE_FILMES: [
         { titulo: "Invocação do Mal, OS 3 FILMES: A História em 1 Vídeo!", 
          autor: "Clark", 
          url: "https://youtu.be/AAdA1jJmRlo?si=P3jgqlWlOFj9r4cV" 
@@ -113,7 +113,7 @@
     const menuUl     = document.getElementById("menu-temas");
     const iframeEl   = document.querySelector(".video-box iframe");
     const infoTitulo = document.querySelector(".info h3");
-    const infoAutor  = document.querySelector(".info p"); // Agora este seletor funciona!
+    const infoAutor  = document.querySelector(".info p");
 
     // Converte URL normal do YouTube para /embed
     function toEmbed(url) {
@@ -149,17 +149,26 @@
         menuUl.appendChild(li);
       });
 
+      // Se houver vídeos, carrega o primeiro no player
       if (lista.length) trocarVideo(lista[0]);
+      else trocarVideo({ titulo: "NENHUM VÍDEO ENCONTRADO", autor: "", url: "" }); // Caso não haja vídeos
     }
 
     // Troca o vídeo e informações
     function trocarVideo(video) {
-      iframeEl.src = toEmbed(video.url);
+      // O src do iframe só é atualizado se houver uma URL válida
+      if (video.url) {
+        iframeEl.src = toEmbed(video.url);
+      } else {
+        // Limpa o iframe se não houver URL
+        iframeEl.src = "";
+      }
+      
       infoTitulo.textContent = video.titulo.toUpperCase();
-      infoAutor.textContent  = `${video.autor.toUpperCase()}.`;
+      infoAutor.textContent  = video.autor ? `${video.autor.toUpperCase()}.` : "";
     }
 
-    // Inicialização
+    // Inicialização: Garante que o menu e o player sejam carregados com o tema inicial (JOGOS)
     renderMenu(selectTema.value);
     selectTema.addEventListener("change", () => renderMenu(selectTema.value));
   </script>
