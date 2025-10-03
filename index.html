@@ -1,179 +1,167 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <title>POBRETUBE</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8" />
+  <title>POBRETUBE</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header>
-    <h1>POBRETUBE</h1>
-  </header>
+  <header>
+    <h1>POBRETUBE</h1>
+  </header>
 
-  <!-- LAYOUT: MENU LATERAL (ESQ) + VÍDEO (DIR) -->
-  <div class="layout">
-    <!-- LATERAL ESQUERDA -->
-    <aside class="sidebar compacto">
-      <!-- Seletor de tema -->
-      <section style="padding:12px 0;">
-        <label for="tema" style="color:#BDC3C7; margin-right:8px;">ESCOLHA O TEMA:</label>
-        <select id="tema">
-          <option value="JOGOS">JOGOS</option>
-          <option value="RESUMO DE FILMES">RESUMO DE FILMES</option>
-          <option value="MUSICA">MUSICA</option>
-          <option value="TUTORIAL">TUTORIAL</option>
-        </select>
-      </section>
+    <div class="layout">
+        <aside class="sidebar compacto">
+            <section style="padding:12px 0;">
+        <label for="tema" style="color:#BDC3C7; margin-right:8px;">ESCOLHA O TEMA:</label>
+        <select id="tema">
+          <option value="JOGOS">JOGOS</option>
+          <option value="RESUMO DE FILMES">RESUMO DE FILMES</option>
+          <option value="MUSICA">MUSICA</option>
+          <option value="TUTORIAL">TUTORIAL</option>
+        </select>
+      </section>
 
-      <!-- Menu dinâmico gerado via JS -->
-      <nav class="nav-vertical" aria-label="Lista de vídeos do tema">
-        <ul id="menu-temas"><!-- Itens gerados via JS --></ul>
-      </nav>
+            <nav class="nav-vertical" aria-label="Lista de vídeos do tema">
+        <ul id="menu-temas"></ul>
+      </nav>
 
-      <!-- Menu fixo adicional -->
-      <br>
-      <h1 style="font-size:15px; color:#f0f0f0; margin:16px 0; text-align:left;">
-  VÍDEOS EXTERNOS DO YOUTUBE👇
+            <br>
+      <h1 style="font-size:15px; color:#f0f0f0; margin:16px 0; text-align:left;">
+  VÍDEOS EXTERNOS DO YOUTUBE👇
 </h1>
-      <nav class="nav-vertical" aria-label="Vídeos fixos">
-        <ul>
-          <li><a href="https://youtu.be/ATyO90ujnEU?si=SzZo3_eud0U-CwfV)</a></li>ARMÊNIA 0 X 5 PORTUGAL | MELHORES MOMENTOS | ELIMINATÓRIAS DA COPA DO MUNDO 2026 | sportv"
-          <li><a href="https://youtu.be/uKlvJ9s1sPs?si=VnwTtXLiS3EwS5Sv" target="_blank">BOLÍVIA 1 X 0 BRASIL | MELHORES MOMENTOS | ELIMINATÓRIAS DA COPA DO MUNDO 2026 | ge t</a></li>
-          <li><a href="https://youtu.be/aTbHZhd4FHo?si=KsDkZIi2IXqBCZYT" target="_blank">BRASIL vs. CHILE [3-0] | RESUMEN | ELIMINATORIAS SUDAMERICANAS | FECHA 17</a></li
-        </ul>
-      </nav>
-    </aside>
+      <nav class="nav-vertical" aria-label="Vídeos fixos">
+        <ul>
+                    <li><a href="https://youtu.be/ATyO90ujnEU?si=SzZo3_eud0U-CwfV" target="_blank">ARMÊNIA 0 X 5 PORTUGAL | MELHORES MOMENTOS | ELIMINATÓRIAS DA COPA DO MUNDO 2026 | sportv</a></li>
+                    <li><a href="https://youtu.be/uKlvJ9s1sPs?si=VnwTtXLiS3EwS5Sv" target="_blank">BOLÍVIA 1 X 0 BRASIL | MELHORES MOMENTOS | ELIMINATÓRIAS DA COPA DO MUNDO 2026 | ge t</a></li>
+                    <li><a href="https://youtu.be/aTbHZhd4FHo?si=KsDkZIi2IXqBCZYT" target="_blank">BRASIL vs. CHILE [3-0] | RESUMEN | ELIMINATORIAS SUDAMERICANAS | FECHA 17</a></li>
+        </ul>
+      </nav>
+    </aside>
 
-    <!-- PLAYER À DIREITA -->
-    <main class="player">
-      <div class="video-box">
-        <iframe
-          class="video-frame"
-          width="540"
-          height="310"
-          src="https://youtu.be/ATyO90ujnEU?si=SzZo3_eud0U-CwfV"
-          title="Player de vídeo"
-          frameborder="0"
-          allowfullscreen
-        ></iframe>
+        <main class="player">
+      <div class="video-box">
+        <iframe
+          class="video-frame"
+          width="540"
+          height="310"
+          src="https://www.youtube.com/embed/ATyO90ujnEU?si=SzZo3_eud0U-CwfV" 
+          title="Player de vídeo"
+          frameborder="0"
+          allowfullscreen
+        ></iframe>
 
-        <div class="info">
-          <h3>ARMÊNIA 0 X 5 PORTUGAL | MELHORES MOMENTOS | ELIMINATÓRIAS DA COPA DO MUNDO 2026 | sportv</h3
-        </div>
-      </div>
-    </main>
-  </div>
+        <div class="info">
+                    <h3>ARMÊNIA 0 X 5 PORTUGAL | MELHORES MOMENTOS | ELIMINATÓRIAS DA COPA DO MUNDO 2026 | sportv</h3>
+          <p></p>
+        </div>
+      </div>
+    </main>
+  </div>
 
-  <!-- JavaScript -->
-  <script>
-    // Mapa de temas → lista de vídeosARMÊNIA 0 X 5 PORTUGAL | MELHORES MOMENTOS | ELIMINATÓRIAS DA COPA DO MUNDO 2026 | sportv
-    const TEMAS = {
-      JOGOS: [
-        { titulo: "ARMÊNIA 0 X 5 PORTUGAL | MELHORES MOMENTOS | ELIMINATÓRIAS DA COPA DO MUNDO 2026 | sportv", 
-         autor: "ge tv", 
-         url: "https://youtu.be/ATyO90ujnEU?si=SzZo3_eud0U-CwfV" 
-        },
-        { titulo: "BOLÍVIA 1 X 0 BRASIL | MELHORES MOMENTOS | ELIMINATÓRIAS DA COPA DO MUNDO 2026 | ge tv", 
-         autor: "ge tv", 
-         url: "https://youtu.be/uKlvJ9s1sPs?si=VnwTtXLiS3EwS5Sv"
-        },
-        { titulo: "BRASIL vs. CHILE [3-0] | RESUMEN | ELIMINATORIAS SUDAMERICANAS | FECHA 17", 
-         autor: "CONMEBOL", 
-         url: "https://youtu.be/aTbHZhd4FHo?si=KsDkZIi2IXqBCZYT" 
-        },
-      ],
-      RESUMO DE FILMES: [
-        { titulo: "Invocação do Mal, OS 3 FILMES: A História em 1 Vídeo!", 
-         autor: "Clark", 
-         url: "https://youtu.be/AAdA1jJmRlo?si=P3jgqlWlOFj9r4cV" 
-        },
-        { titulo: "Wandinha, AS DUAS TEMPORADAS: A História em 1 Vídeo!", 
-         autor: "Clark", 
-         url: "https://youtu.be/0sul-t3LL7M?si=PXzi2nJXXURj86RY" 
-        },
-      ],
-      MUSICA: [
-        { titulo: "Diego e Victor Hugo - Tubarões", 
-         autor: "Diego e VIctor Hugo", 
-         url: "https://youtu.be/10XarNSkw0s?si=9QW7ilsju2K3xjag" 
-        },
-        { titulo: "PÉRICLES - ATÉ QUE DUROU (AO VIVO) - VÍDEO OFICIAL", 
-         autor: "Canal do Pericão", 
-         url: "https://youtu.be/T3Y6RRSDm4o?si=Gd-Wle-FTvJQMdd2" 
-        },
-      ],
-      TUTORIAL: [
-        { titulo: "Origami: Tsuru - Instruções em Português BR", 
-         autor: "Easy Origami", 
-         url: "https://youtu.be/pzS0ToWZ9DA?si=MK3d5AVLw3Udafq9" 
-        },
-        { titulo: "RÁPIDO e FÁCIL | OPERAÇÕES FRACIONÁRIAS | FRAÇÕES", 
-         autor: "Dicasdemat Sandro Curió
-", 
-         url: "https://youtu.be/dZfWflhf_IU?si=dB47zuMc-qBZJelP" 
-        },
-      ],
-    };
+    <script>
+    // Mapa de temas → lista de vídeos
+    const TEMAS = {
+      JOGOS: [
+        { titulo: "ARMÊNIA 0 X 5 PORTUGAL | MELHORES MOMENTOS | ELIMINATÓRIAS DA COPA DO MUNDO 2026 | sportv", 
+         autor: "ge tv", 
+         url: "https://youtu.be/ATyO90ujnEU?si=SzZo3_eud0U-CwfV" 
+        },
+        { titulo: "BOLÍVIA 1 X 0 BRASIL | MELHORES MOMENTOS | ELIMINATÓRIAS DA COPA DO MUNDO 2026 | ge tv", 
+         autor: "ge tv", 
+         url: "https://youtu.be/uKlvJ9s1sPs?si=VnwTtXLiS3EwS5Sv"
+        },
+        { titulo: "BRASIL vs. CHILE [3-0] | RESUMEN | ELIMINATORIAS SUDAMERICANAS | FECHA 17", 
+         autor: "CONMEBOL", 
+         url: "https://youtu.be/aTbHZhd4FHo?si=KsDkZIi2IXqBCZYT" 
+        },
+      ],
+      RESUMO DE FILMES: [
+        { titulo: "Invocação do Mal, OS 3 FILMES: A História em 1 Vídeo!", 
+         autor: "Clark", 
+         url: "https://youtu.be/AAdA1jJmRlo?si=P3jgqlWlOFj9r4cV" 
+        },
+        { titulo: "Wandinha, AS DUAS TEMPORADAS: A História em 1 Vídeo!", 
+         autor: "Clark", 
+         url: "https://youtu.be/0sul-t3LL7M?si=PXzi2nJXXURj86RY" 
+        },
+      ],
+      MUSICA: [
+        { titulo: "Diego e Victor Hugo - Tubarões", 
+         autor: "Diego e VIctor Hugo", 
+         url: "https://youtu.be/10XarNSkw0s?si=9QW7ilsju2K3xjag" 
+        },
+        { titulo: "PÉRICLES - ATÉ QUE DUROU (AO VIVO) - VÍDEO OFICIAL", 
+         autor: "Canal do Pericão", 
+         url: "https://youtu.be/T3Y6RRSDm4o?si=Gd-Wle-FTvJQMdd2" 
+        },
+      ],
+      TUTORIAL: [
+        { titulo: "Origami: Tsuru - Instruções em Português BR", 
+         autor: "Easy Origami", 
+         url: "https://youtu.be/pzS0ToWZ9DA?si=MK3d5AVLw3Udafq9" 
+        },
+        { titulo: "RÁPIDO e FÁCIL | OPERAÇÕES FRACIONÁRIAS | FRAÇÕES", 
+         autor: "Dicasdemat Sandro Curió", 
+         url: "https://youtu.be/dZfWflhf_IU?si=dB47zuMc-qBZJelP" 
+        },
+      ],
+    };
 
-    // Seletores
-    const selectTema = document.getElementById("tema");
-    const menuUl     = document.getElementById("menu-temas");
-    const iframeEl   = document.querySelector(".video-box iframe");
-    const infoTitulo = document.querySelector(".info h3");
-    const infoAutor  = document.querySelector(".info p");
+    // Seletores
+    const selectTema = document.getElementById("tema");
+    const menuUl     = document.getElementById("menu-temas");
+    const iframeEl   = document.querySelector(".video-box iframe");
+    const infoTitulo = document.querySelector(".info h3");
+    const infoAutor  = document.querySelector(".info p"); // Agora este seletor funciona!
 
-    // Converte URL normal do YouTube para /embed
-    function toEmbed(url) {
-      try {
-        const u = new URL(url);
-        const id = u.searchParams.get("v");
-        if (id) return `https://www.youtube.com/embed/${id}`;
-        if (u.hostname.includes("youtu.be")) return `https://www.youtube.com/embed/${u.pathname.slice(1)}`;
-        return url;
-      } catch {
-        return url;
-      }
-    }
+    // Converte URL normal do YouTube para /embed
+    function toEmbed(url) {
+      try {
+        const u = new URL(url);
+        // Trata URLs longas (ex: ?v=ID)
+        const id = u.searchParams.get("v");
+        if (id) return `https://www.youtube.com/embed/${id}`;
+        // Trata URLs curtas (ex: youtu.be/ID)
+        if (u.hostname.includes("youtu.be")) return `https://www.youtube.com/embed/${u.pathname.slice(1)}`;
+        return url;
+      } catch {
+        return url;
+      }
+    }
 
-    // Renderiza o menu com base no tema
-    function renderMenu(tema) {
-      const lista = TEMAS[tema] || [];
-      menuUl.innerHTML = "";
+    // Renderiza o menu com base no tema
+    function renderMenu(tema) {
+      const lista = TEMAS[tema] || [];
+      menuUl.innerHTML = "";
 
-      lista.forEach((video) => {
-        const li = document.createElement("li");
-        const a  = document.createElement("a");
-        a.href = "#";
-        a.textContent = video.titulo.toUpperCase();
-        a.setAttribute("role", "button");
-        a.addEventListener("click", (e) => {
-          e.preventDefault();
-          trocarVideo(video);
-        });
-        li.appendChild(a);
-        menuUl.appendChild(li);
-      });
+      lista.forEach((video) => {
+        const li = document.createElement("li");
+        const a  = document.createElement("a");
+        a.href = "#";
+        a.textContent = video.titulo.toUpperCase();
+        a.setAttribute("role", "button");
+        a.addEventListener("click", (e) => {
+          e.preventDefault();
+          trocarVideo(video);
+        });
+        li.appendChild(a);
+        menuUl.appendChild(li);
+      });
 
-      if (lista.length) trocarVideo(lista[0]);
-    }
+      if (lista.length) trocarVideo(lista[0]);
+    }
 
-    // Troca o vídeo e informações
-    function trocarVideo(video) {
-      iframeEl.src = toEmbed(video.url);
-      infoTitulo.textContent = video.titulo.toUpperCase();
-      infoAutor.textContent  = `${video.autor.toUpperCase()}.`;
-    }
+    // Troca o vídeo e informações
+    function trocarVideo(video) {
+      iframeEl.src = toEmbed(video.url);
+      infoTitulo.textContent = video.titulo.toUpperCase();
+      infoAutor.textContent  = `${video.autor.toUpperCase()}.`;
+    }
 
-    // Inicialização
-    renderMenu(selectTema.value);
-    selectTema.addEventListener("change", () => renderMenu(selectTema.value));
-  </script>
+    // Inicialização
+    renderMenu(selectTema.value);
+    selectTema.addEventListener("change", () => renderMenu(selectTema.value));
+  </script>
 </body>
 </html>
-```
-
-
-
-
-
-
